@@ -1,0 +1,35 @@
+//        int age;
+//        do {
+//            System.out.println("What is your age?");
+//            while (!input.hasNextInt()) {
+//                System.out.println("Age must be a number. Enter number");
+//                input.nextLine();
+//            }
+//            age = input.nextInt();
+//        } while (age <= 0);
+        
+//        while (age < 0) {
+//            System.out.println("Age cannot be negative");
+//            System.out.println("Please enter valid age.");
+//            age = input.nextInt();
+//        }
+
+
+
+public static int returnValidAge(Scanner scanner) {
+        int age;
+        boolean isFirstTime = true;
+        do {
+            if(isFirstTime){
+                System.out.println("What is your age?");
+                isFirstTime = false;
+            }else{
+                System.out.println("Please enter a number greater than 0.");
+            }
+            while (!scanner.hasNextInt()) {
+                System.out.println("Age must be a number. Enter number");
+                scanner.next();
+            }
+            age = scanner.nextInt();
+        } while (age <= 0);
+        return age;

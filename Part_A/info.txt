@@ -1,0 +1,76 @@
+//print days of week (enum)
+import package
+
+ for(DayOfWeek d : DayOfWeek.values()) {
+                System.out.println(d);
+     }
+
+    
+//calendar class (abstract)
+https://www.geeksforgeeks.org/calendar-class-in-java-with-examples/
+
+import java.util.Calendar;
+
+     Calendar calendar = Calendar.getInstance(); 
+         System.out.println(calendar.get(Calendar.YEAR));
+         System.out.println(calendar.get(Calendar.DATE));
+         System.out.println(calendar.get(Calendar.MINUTE));
+         System.out.println(calendar.get(Calendar.SECOND));
+
+
+//Class Date
+
+https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+
+//Class DateFormat
+
+https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html
+
+-To format a date for the current Locale : 
+myString = DateFormat.getDateInstance().format(myDate);
+-------------------------------------------------------------------------
+
+*stackOverflow explanation
+public static void main(String [] args) throws ParseException{
+    String dateString = "2015-07-16 17:07:21";
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    // use SimpleDateFormat to define how to PARSE the INPUT
+    Date date = sdf.parse(dateString);
+
+    // at this point you have a Date-Object with the value of
+    // 1437059241000 milliseconds
+    // It doesn't have a format in the way you think
+
+    // use SimpleDateFormat to define how to FORMAT the OUTPUT
+    System.out.println( sdf.format(date) );
+
+    sdf = new SimpleDateFormat();
+    System.out.println( sdf.format(date) );
+------------------------------------------------------------------
+*Youtube example (https://www.youtube.com/watch?v=qc930nafWdM)
+	 Date thisDate = new Date();
+            System.out.println(thisDate);
+            
+            //formating the output
+            SimpleDateFormat dateForm = new SimpleDateFormat("MM/dd/YY");  (date object--->string)
+            System.out.println(dateForm.format(thisDate));
+==================================================================================================
+
+|	// (date object --->string)	|
+|	obj.format(thisDate));    	| 
+|                                       |
+|	//(text --->date object)        | 
+|	obj.parse(dateInString);  	|
+
+------------------------------------------------------------------
+*String-->date object -->string
+
+String date = "24/08/2019";
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Date yeah = formatter.parse(date);
+            String newDate=formatter.format(yeah);
+            System.out.println(newDate);
+
+output--->24/08/2019
